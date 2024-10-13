@@ -1,0 +1,536 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin-left: 30px;
+    margin-right: 30px;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+    text-align: center;
+    padding: 20px 0; /* Optional: Adds space around the image */
+}
+
+/* Styling the logo */
+.dashboard-logo {
+    max-width: 120%;  /* Ensures the image fits within the sidebar */
+    height: auto;     /* Maintains the aspect ratio */
+    width: 150px;     /* Adjust width as necessary */
+    object-fit: contain; /* Ensures the image does not distort */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 100px;
+    background-color: #301e60;
+    color: #fff;
+    padding: 20px;
+}
+
+.sidebar-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    margin-bottom: 25px;
+}
+
+.sidebar-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.sidebar-menu li a i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.sidebar-menu li a span {
+    font-size: 14px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.demand-logo {
+    max-width: 10%;  /* Ensures the image fits within the sidebar */
+    height: auto;     /* Maintains the aspect ratio */
+    width: 150px;     /* Adjust width as necessary */
+    object-fit: contain; /* Ensures the image does not distort */
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column; /* Stack the h5 above the h1 */
+    margin-left: 15px; /* Add space between the image and the text */
+}
+
+.header-text h5 {
+    margin: 0; /* Remove margin around the h5 to prevent extra space */
+    font-size: 10px;
+    color: #9a9999;
+}
+
+.header-text h1 {
+    margin: 5px 0 0 0; /* Add small margin only at the top to separate from h5 */
+    font-size: 15px;
+    color: #212121;
+}
+
+.header-left img {
+    margin-right: 15px; /* Adds some space between the image and the heading */
+    max-width: 50px;
+    height: auto;
+    object-fit: contain;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.search-container {
+    position: relative; /* Allows absolute positioning of the icon */
+    margin-right: 15px;
+    padding-left: 30px; /* Space for the search icon */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-icon {
+    position: absolute;
+    margin-right: 10px;
+    left: 10px; /* Position the icon inside the input */
+    top: 50%;
+    transform: translateY(-50%); /* Center the icon vertically */
+    color: #888;
+}
+
+.date-range {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 30px; /* Space for the search icon */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.date-range span {
+    margin-right: 10px;
+}
+
+.date-range i {
+    font-size: 20px;
+    color: #666;
+}
+
+.progress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 200px;
+}
+
+/* Priority Focus Section */
+.priority-focus {
+    background-color: #533ea7;
+    padding: 20px;
+    width: 50%;
+    border-radius: 10px;
+    color: #fff;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+}
+
+.priority-focus-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.goals {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 20px;
+    flex: 1;
+}
+
+.goals-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.priority-focus-header h1 {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.priority-focus-header a {
+    color: #fff;
+    font-size: 14px;
+}
+
+/* .focus-cards {
+    display: flex;
+    gap: 20px;
+}
+
+.focus-cards .card {
+    background-color: #6b4ce7;
+    border: 1px solid #ffffff5c;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+/* Priority Focus Cards with Vertical Divider */
+.focus-cards {
+    display: flex;
+    position: relative;
+}
+
+.focus-cards .card {
+    padding: 15px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Allows positioning of the vertical line */
+}
+
+/* Add vertical line between the cards */
+.focus-cards .card:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -10px; /* Adjust as necessary to position the line */
+    width: 1px; /* Width of the line */
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Color of the line */
+}
+
+
+
+.focus-cards .card i {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.focus-cards .card h4 {
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+.focus-cards .card span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Goals Section */
+.goals {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 20px;
+    flex: 1;
+}
+
+.goals-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.goals-header h3 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.goals-header a {
+    color: #6b4ce7;
+    font-size: 14px;
+}
+
+.achievement-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progress-container {
+    width: 50%;
+    text-align: center;
+}
+
+.progress-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #d8c2f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #060607;
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+
+.progress-container p{
+    font-size: 10px;
+}
+
+/* .goals-details {
+    text-align: left;
+}
+
+.goals-details div {
+    margin-bottom: 10px;
+}
+
+.goals-details strong {
+    font-size: 16px;
+}
+
+.goals-details span {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+} */
+
+.goals-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+     position: relative; /* This allows absolute positioning of the text */
+}
+
+.goals-details div {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 40px;
+    margin-bottom: 35px;
+
+}
+
+.goals-details strong {
+    font-size: 15px;
+}
+
+.goals-details span {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.goals-details p {
+    position: absolute;
+    left: 0; /* Aligns the text under "Active Goals" */
+    margin-top: 60px; /* Adjust this value based on the spacing you prefer */
+    margin-left: 120px;
+    font-size: 12px;
+    text-align: left;
+    font-style: italic; /* Italicize the text */
+    font-family: 'Arial', sans-serif; /* Choose a specific font */
+    color: #555; /* Subtle gray color for the note */
+}
+
+/* .priority-focus {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #e5e5fa;
+    padding: 20px;
+    text-align: center;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.goals {
+    margin-top: 30px;
+}
+
+.achievement-progress {
+    display: flex;
+    align-items: center;
+}
+
+.progress-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #d1e0ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+} */
+
+/* .performance-trend {
+    margin-top: 30px;
+}
+
+canvas {
+    width: 100%;
+    height: 250px;
+} */
+
+/* Container for the performance section */
+.performance-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f4f6fa;
+    border-radius: 10px;
+}
+
+/* Styling for the summary boxes at the top */
+.performance-summary {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.summary-box {
+    background-color: #e0d3fc;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.summary-box:nth-child(2) {
+    background-color: #fdf1d4;
+}
+
+.summary-box h4 {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.summary-box span {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Styling for the performance trend chart */
+.performance-trend {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.trend-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.trend-header h3 {
+    font-size: 16px;
+    color: #333;
+}
+
+.date-toggle button {
+    background-color: #f0f0f5;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.date-toggle button:hover {
+    background-color: #e0e0e5;
+}
+
+/* Chart styling */
+canvas {
+    width: 100%;
+    height: 300px;
+}
+
+
+.sales-rep {
+    margin-top: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.opportunities {
+    margin-top: 30px;
+}
+
+.opportunity-card {
+    background-color: #ffefd5;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}

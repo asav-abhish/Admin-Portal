@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <img src="Dashboard.png" alt="Dashboard" class="dashboard-logo">
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#"><i class="fas fa-home"></i><span>Home</span></a></li>
+            <li><a href="#"><i class="fas fa-chart-line"></i><span>Analytics</span></a></li>
+            <li><a href="#"><i class="fas fa-users"></i><span>Engage</span></a></li>
+            <li><a href="#"><i class="fas fa-industry"></i><span>Demand Wise</span></a></li>
+            <li><a href="#"><i class="fas fa-headset"></i><span>Support</span></a></li>
+        </ul>        
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div class="header-left">
+                <img src="Demand.png" alt="Demand" class="demand-logo">
+                <div class="header-text">
+                    <h5>Demand Wise</h5>
+                    <h1>Opportunity</h1>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="search" placeholder="Find anything" />
+                </div>
+                <div class="date-range">
+                    <span id="date-text">12 Jul 24 - 22 Jul 24</span>
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+            </div>            
+            
+        </div>
+        
+        <div class="progress">
+        <div class="priority-focus">
+            <div class="priority-focus-header">
+                <h1>Priority Focus</h1>
+                <a href="#">See All</a>
+            </div>
+            <div class="focus-cards">
+                <div class="card">
+                    <i class="fas fa-tasks"></i>
+                    <h4>Today's Todo</h4>
+                    <span>7</span>
+                </div>
+                <div class="card">
+                    <i class="fas fa-calendar-check"></i>
+                    <h4>Today's Closure Date</h4>
+                    <span>3</span>
+                </div>
+                <div class="card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>AI Suggested</h4>
+                    <span>4</span>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="goals">
+            <div class="goals-header">
+                <h3>Goals Achievements</h3>
+                <a href="#">See All Goals</a>
+            </div>
+            <div class="achievement-container">
+                <div class="progress-container">
+                    <div class="progress-circle">
+                        <span>80%</span>
+                    </div>
+                    <p>Of Total Goals Achieved</p>
+                </div>
+                <div class="goals-details">
+                    <div>
+                        <strong>Active Goals</strong>
+                        <span>15</span>
+                    </div>
+                    <div>
+                        <strong>Completed Goals</strong>
+                        <span>11</span>
+                    </div>
+                    <p>*Date filter doesn't apply to this data</p>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+        <div class="performance-section">
+            <div class="performance-summary">
+                <div class="summary-box">
+                    <h4>Sent</h4>
+                    <span>500K</span>
+                </div>
+                <div class="summary-box">
+                    <h4>Delivered</h4>
+                    <span>420K</span>
+                </div>
+                <div class="summary-box">
+                    <h4>Opened</h4>
+                    <span>328K</span>
+                </div>
+                <div class="summary-box">
+                    <h4>Engagement</h4>
+                    <span>135K</span>
+                </div>
+                <div class="summary-box">
+                    <h4>Engagement Rate</h4>
+                    <span>14%</span>
+                </div>
+            </div>
+            
+            <div class="performance-trend">
+                <div class="trend-header">
+                    <h3>Performance Trend</h3>
+                    <div class="date-toggle">
+                        <button>D</button>
+                        <button>W</button>
+                        <button>M</button>
+                    </div>
+                </div>
+                <canvas id="performanceChart"></canvas>
+            </div>
+        </div>
+        
+        <div class="sales-rep">
+            <h3>Sales Rep</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Store</th>
+                        <th>City</th>
+                        <th>Region</th>
+                        <th>Total Opportunities</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Alex Smith</td>
+                        <td>Lowe's of Anchorage, AK</td>
+                        <td>Anchorage</td>
+                        <td>Northeast</td>
+                        <td>40</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="opportunities">
+            <h3>Opportunities</h3>
+            <div class="opportunity-card">
+                <h4>Stock Clearance Offer</h4>
+                <div>Proposal</div>
+                <div>5 Products</div>
+                <div>$40,000 Revenue</div>
+                <div>Sales Person: Alex Lobo</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('performanceChart').getContext('2d');
+        const performanceChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['27 July 24', '28 July 24', '29 July 24'],
+                datasets: [{
+                    label: 'Sent',
+                    data: [32000, 40000, 36000],
+                    borderColor: 'purple',
+                    fill: false
+                }, {
+                    label: 'Delivered',
+                    data: [20000, 30000, 25000],
+                    borderColor: 'orange',
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Date'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Count'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
